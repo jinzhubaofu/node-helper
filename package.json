@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:moli/node-helper.git"
+    "url": "https://github.com/jinzhubaofu/node-helper"
   },
   "keywords": [
     "nodejs-tools"
