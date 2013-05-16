@@ -1,5 +1,5 @@
 var EMPTY_FUNCTION = new Function();
-var Promise = require('./util/promise.js');
+var Promise = require('../promise/promise.js');
 
 module.exports = function(queue, iterator) {
 
