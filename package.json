@@ -1,0 +1,19 @@
+{
+  "name": "node-helper",
+  "version": "1.0.0",
+  "description": "a set of useful tools for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:moli/node-helper.git"
+  },
+  "keywords": [
+    "nodejs-tools"
+  ],
+  "author": "leonlu@outlook.com",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
