@@ -11,23 +11,19 @@ var Promise = require('../promise/promise.js');
  */
 function Parallel(targets, iterator) {
 
-    var isCompleted = 0;
     var promise = new Promise();
     var keys = Object.keys(targets);
     var count = keys.length;
+    var errors = [];
 
     var iteratorCallback = function(err) {
 
         if (err) {
-            finish(err);
-            isCompleted = 2;
-            iteratorCallback = EMPTY_FUNCTION;
-            return;
+            errors.push(err);
         }
 
         if (--count === 0) {
-            finish();
-            isCompleted = 1;
+            finish(errors.length ? errors : null);
             iteratorCallback = EMPTY_FUNCTION;
         }
 
@@ -42,7 +38,7 @@ function Parallel(targets, iterator) {
     keys.forEach(function(key) {
 
         process.nextTick(function() {
-            iterator(key, iteratorCallback);
+            iterator(key, targets[key], iteratorCallback);
         });
 
     });
